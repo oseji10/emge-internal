@@ -4,7 +4,23 @@
     <title>CHF Invoice</title>
 </head>
 <body>
-    <table border='1'>
+    <table width="100%" border="1">
+        <tr>
+            <td rowspan="2"><img src="emge-logo.png" />
+            <td style="font-size: 40px; font-weight:bold; text-align:right !important;">INVOICE
+                <br/>
+              
+            </td>
+
+</tr>
+<tr>
+                    <td></td>
+                    <td>jjj</td>
+                    <td></td>
+                    <td>jjj</td>
+                </tr>
+</table>
+    <table>
         <tr>
             <td>
                 <p style="font-weight:bold; margin: 0;">EMGE RESOURCES LIMITED</p>
@@ -52,10 +68,10 @@
 
     <table width="100%">
         <tr>
-            <td align="right">TOTAL DUE: <b>N{{ number_format($total_due, 2) }}</b></td>
+            <td align="right"><h3>TOTAL DUE: <b>N{{ number_format($total_due, 2) }}</b></h3></td>
         </tr>
     </table>
-
+<br/>
     <i><b>Note:</b> Remark column carries the reference transaction ID on the CHF portal</i>
 
     <br/>
