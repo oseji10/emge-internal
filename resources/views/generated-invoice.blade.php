@@ -3,21 +3,21 @@
 <head>
     <title>CHF Invoice</title>
 </head>
-<body>
-    <table width="100%" border="1">
+<body style=" margin-bottom: 100px;">
+    <table width="100%">
         <tr>
-            <td rowspan="2"><img src="emge-logo.png" />
-            <td style="font-size: 40px; font-weight:bold; text-align:right !important;">INVOICE
+            <td rowspan="2" style="width:40%"><img src="emge-logo.png" />
+            <td colspan="4" style="font-size: 40px; font-weight:bold; text-align:right !important;">INVOICE
                 <br/>
               
             </td>
 
 </tr>
-<tr>
-                    <td></td>
-                    <td>jjj</td>
-                    <td></td>
-                    <td>jjj</td>
+<tr style="height:5px;">                <td style="width: 10%"></td>
+                    <td style="width:40%;  background-color:#00008B; color:white; font-weight:bold; font-size:16px;">CHF/{{ $hospital->short_name }}/{{$description->period_duration}}/0001</td>
+                    <td style="width: 20%; color:white">jjj</td>
+                    <td style="width:30%; background-color:black;">JJJJJ</td>
+                    
                 </tr>
 </table>
     <table>
@@ -53,6 +53,7 @@
             <th>REMARK</th>
             <th>DESCRIPTION</th>
             <th>QTY</th>
+            <!-- <th>UNIT COST</th> -->
             <th>TOTAL</th>
         </tr>
 
@@ -61,7 +62,9 @@
                 <td>{{ $invoice->transaction_id ?? '' }}</td>
                 <td>{{ $invoice->product_name ?? '' }}</td>
                 <td>{{ $invoice->quantity ?? '' }}</td>
-                <td>N{{ number_format(($invoice->cost ?? 0) * ($invoice->quantity ?? 0), 2) }}</td>
+                <!-- <td>{{ number_format((($invoice->quantity ?? 0) != 0 ? ($invoice->cost ?? 0) / $invoice->quantity : 0 ),2)}}</td> -->
+                <td>{{ number_format(((($invoice->quantity ?? 0) != 0 ? ($invoice->cost ?? 0) / $invoice->quantity : 0 )*($invoice->quantity ?? 0 )),2)}}</td>
+                <!-- <td>N{{ number_format(($invoice->cost ?? 0) * ($invoice->quantity ?? 0), 2) }}</td> -->
             </tr>
         @endforeach
     </table>
@@ -79,5 +82,16 @@
     <p style="font-weight:bold; margin: 0;"><b>Account Name:</b> {{ $bank_details->account_name }}</p>
     <p style="margin: 0;"><b>Account Number:</b> {{ $bank_details->account_number }}</p>
     <p style="margin: 0;"><b>Bank Name:</b> {{ $bank_details->bank }}</p>
-</body>
+<footer style="
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        position: fixed;
+        bottom: -30px;">
+<p>THANK YOU FOR YOUR BUSINESS!<br/>
+www.emgeresources.com<br/>
+support@emgeresources.com</p>
+</footer>
+    </body>
+
 </html>
