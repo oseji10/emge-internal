@@ -50,32 +50,32 @@
 
     <table border='1' width="100%" style="border-collapse:collapse;">
         <tr align="left">
-            <th>REMARK</th>
+            <!-- <th>REMARK</th> -->
             <th>DESCRIPTION</th>
-            <th>QTY</th>
+            <!-- <th>QTY</th> -->
             <!-- <th>UNIT COST</th> -->
             <th>TOTAL</th>
         </tr>
 
         @foreach($invoices as $invoice)
             <tr>
-                <td>{{ $invoice->transaction_id ?? '' }}</td>
+                <!-- <td>{{ $invoice->transaction_id ?? '' }}</td> -->
                 <td>{{ $invoice->product_name ?? '' }}</td>
-                <td>{{ $invoice->quantity ?? '' }}</td>
-                <!-- <td>{{ number_format((($invoice->quantity ?? 0) != 0 ? ($invoice->cost ?? 0) / $invoice->quantity : 0 ),2)}}</td>
-                <td>{{ number_format(((($invoice->quantity ?? 0) != 0 ? ($invoice->cost ?? 0) / $invoice->quantity : 0 )*($invoice->quantity ?? 0 )),2)}}</td> -->
-                <td>N{{ number_format(($invoice->cost ?? 0), 2) }}</td>
+                <!-- <td>{{ $invoice->quantity ?? '' }}</td> -->
+                <!-- <td>{{ number_format((($invoice->quantity ?? 0) != 0 ? ($invoice->cost ?? 0) / $invoice->quantity : 0 ),2)}}</td> -->
+                <td>N{{ number_format(($invoice->cost),2)}}</td>
+                <!-- <td>N{{ number_format(($invoice->cost ?? 0) * ($invoice->quantity ?? 0), 2) }}</td> -->
             </tr>
         @endforeach
     </table>
 
     <table width="100%">
         <tr>
-            <td align="right"><h3>TOTAL DUE: <b>N{{ number_format($total_due, 2) }}</b></h3></td>
+            <!-- <td align="right"><h3>TOTAL DUE: <b>N{{ number_format($total_due, 2) }}</b></h3></td> -->
         </tr>
     </table>
 <br/>
-    <i><b>Note:</b> Remark column carries the reference transaction ID on the CHF portal</i>
+    <!-- <i><b>Note:</b> Remark column carries the reference transaction ID on the CHF portal</i> -->
 
     <br/>
     <br/>

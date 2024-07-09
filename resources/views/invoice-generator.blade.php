@@ -12,6 +12,7 @@
                 <option value="4">UBTH</option>
                 <option value="5">UCH</option>
                 <option value="6">UNTH</option>
+                <option value="7">FMOH</option>
 </select>
         </td>
 </tr>
@@ -19,7 +20,9 @@
         <td>Period</td>
         <td>
         <select name="period_id">
-                <option value="1">May2024</option>
+        <option value="3">June2024</option>  
+        <option value="2">FMOHSC</option>        
+        <option value="1">May2024</option>
                 
 </select>
         </td>
